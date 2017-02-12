@@ -86,7 +86,29 @@ router.get("/:id", function(req, res) {
 router.post("/new", function(req, res) {
     var serviceConfig = {url: BASE_SERVICE_URL + "/new", body: req.body, method: "post"};
 
-    restService.execute(serviceConfig, res);
+    restService.execute(serviceConfig, res, function(error, result) {
+        if (!error) {
+            var mailService = new MailService();
+            var token = tokenUtil.createToken({id: result.result.id, name: result.result.name, username: result.result.username});
+            mailService.getEmailCreatePasswordContent(result.result.name, config.recoveryURL+"?token="+token, function(error, content) {
+                var emailConfig = {to: result.result.email,
+                    from: "airstudies.contact@gmail.com",
+                    subject: "Create Password",
+                    text: null,
+                    attachment: [
+                        {data: content, alternative:true, type: "text/html"},
+                        {path: __dirname+"/../html/logoAS.png", type:"image/png", headers:{"Content-ID":"<logoAS>"}}
+                    ]};
+
+                mailService.sendEmail(emailConfig, function(err, result) {
+                    if (err) {
+                        console.log(err.message);
+                    }
+                });
+
+            });
+        }
+    });
 });
 
 router.put("/update", function(req, res) {
@@ -114,7 +136,7 @@ router.post("/recoverpassword/:email", function(req, res) {
 
         var serviceConfig = {url: BASE_SERVICE_URL + "/list", body: params, method: "post"};
 
-        restCall.executeCall(serviceConfig, function(error, result) {
+        restService.executeNoSendResponse(serviceConfig, res, function(error, result) {
 
             if (error) {
                 console.log(error);

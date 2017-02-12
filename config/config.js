@@ -13,6 +13,7 @@ module.exports = {
     "tokenLife": 5,
     "tokenLifeForRecovery": 4320,
     "recoveryURL": "http://localhost:4200/lostpassword",
+    "createPasswordURL": "http://localhost:4200/createpassword",
     "email" : {
         "user": "airstudies.contact",
         "password": "botafogo123",
