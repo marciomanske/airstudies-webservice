@@ -62,6 +62,7 @@ router.post("/validatetoken", function(req, res) {
 
 });
 
+
 router.get("/list/:listParams", function(req, res) {
 
     if (req.params.listParams) {
@@ -116,6 +117,8 @@ router.put("/update", function(req, res) {
 
     restService.execute(serviceConfig, res);
 });
+
+
 
 router.put("/updatePassword", function(req, res) {
     var serviceConfig = {url: BASE_SERVICE_URL + "/updatePassword", body: req.body, method: "put"};
