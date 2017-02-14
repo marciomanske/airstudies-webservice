@@ -11,6 +11,7 @@ var email = require("./routes/email");
 var school = require("./routes/school");
 var property = require("./routes/property");
 var student = require("./routes/student");
+var contract = require("./routes/contract");
 
 var config = require("./config/config");
 
@@ -43,6 +44,7 @@ app.use(config.baseUrl + "/email", email);
 app.use(config.baseUrl + "/school", school);
 app.use(config.baseUrl + "/property", property);
 app.use(config.baseUrl + "/student", student);
+app.use(config.baseUrl + "/contract", contract);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

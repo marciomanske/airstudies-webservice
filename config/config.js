@@ -33,6 +33,7 @@ module.exports = {
     "baseServiceUrlSchool": "http://sample-env-3.p3aphvcist.us-west-2.elasticbeanstalk.com",
     "baseServiceUrlStudent": "http://sample-env-2.ucky8aifar.us-west-2.elasticbeanstalk.com",
     "baseServiceUrlProperty": "http://sample-env-4.qeuvwtig8f.us-west-2.elasticbeanstalk.com",
+    "baseServiceUrlContract": "",
     "secret": "AirStudiesSecretConfigFile8592",
     "tokenLife": 5,
     "tokenLifeForRecovery": 4320,
