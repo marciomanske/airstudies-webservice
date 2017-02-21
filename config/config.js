@@ -29,11 +29,12 @@ module.exports = {
 //AWS
 module.exports = {
     "baseUrl": "/airstudies/services",
-    "baseServiceUrlUser": "http://sample-env-1.m8xiavyed3.us-west-2.elasticbeanstalk.com",
-    "baseServiceUrlSchool": "http://sample-env-3.p3aphvcist.us-west-2.elasticbeanstalk.com",
-    "baseServiceUrlStudent": "http://sample-env-2.ucky8aifar.us-west-2.elasticbeanstalk.com",
-    "baseServiceUrlProperty": "http://sample-env-4.qeuvwtig8f.us-west-2.elasticbeanstalk.com",
-    "baseServiceUrlContract": "",
+    //"baseServiceUrlUser": "http://sample-env-1.m8xiavyed3.us-west-2.elasticbeanstalk.com",
+    "baseServiceUrlUser": "http://104.236.9.163:8080",
+    "baseServiceUrlSchool": "http://104.236.9.163:8080",
+    "baseServiceUrlStudent": "http://104.236.9.163:8080",
+    "baseServiceUrlProperty": "http://104.236.9.163:8080",
+    "baseServiceUrlContract": "http://104.236.9.163:8080",
     "secret": "AirStudiesSecretConfigFile8592",
     "tokenLife": 5,
     "tokenLifeForRecovery": 4320,
