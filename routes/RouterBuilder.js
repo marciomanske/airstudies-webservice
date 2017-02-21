@@ -10,6 +10,12 @@ var RouterBuilder = function () {
 
     return {
 
+        executePost: function(url, body, response) {
+            var serviceConfig = {url: url, body: body, method: "post"};
+            restService.execute(serviceConfig, response);
+
+        },
+
         build: function (router, baseServiceURL) {
 
             router.get("/list/:listParams", function (req, res) {
