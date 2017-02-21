@@ -85,7 +85,8 @@ router.get("/:id", function(req, res) {
 
 
 router.post("/new", function(req, res) {
-    var serviceConfig = {url: BASE_SERVICE_URL + "/new", body: req.body, method: "post"};
+    //var serviceConfig = {url: BASE_SERVICE_URL + "/new", body: req.body, method: "post"};
+    var serviceConfig = {url: BASE_SERVICE_URL, body: req.body, method: "post"};
 
     restService.execute(serviceConfig, res, function(error, result) {
         if (!error) {
@@ -113,7 +114,8 @@ router.post("/new", function(req, res) {
 });
 
 router.put("/update", function(req, res) {
-    var serviceConfig = {url: BASE_SERVICE_URL + "/update", body: req.body, method: "put"};
+    //var serviceConfig = {url: BASE_SERVICE_URL + "/update", body: req.body, method: "put"};
+    var serviceConfig = {url: BASE_SERVICE_URL, body: req.body, method: "put"};
 
     restService.execute(serviceConfig, res);
 });

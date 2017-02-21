@@ -31,13 +31,13 @@ var RouterBuilder = function () {
             });
 
             router.post("/new", function (req, res) {
-                var serviceConfig = {url: baseServiceURL + "/new", body: req.body, method: "post"};
+                var serviceConfig = {url: baseServiceURL, body: req.body, method: "post"};
 
                 restService.execute(serviceConfig, res);
             });
 
             router.put("/update", function (req, res) {
-                var serviceConfig = {url: baseServiceURL + "/update", body: req.body, method: "put"};
+                var serviceConfig = {url: baseServiceURL, body: req.body, method: "put"};
 
                 restService.execute(serviceConfig, res);
             });
