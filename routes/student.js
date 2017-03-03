@@ -9,7 +9,8 @@ var config = require("../config/config");
 var BASE_SERVICE_URL = config.baseServiceUrlStudent + "/student";
 
 var RouterBuilder = require("./RouterBuilder");
-new RouterBuilder().build(router, BASE_SERVICE_URL);
+var routerBuilder = new RouterBuilder();
+routerBuilder.build(router, BASE_SERVICE_URL);
 
 router.get("/byname/:name", function(req, res) {
 
